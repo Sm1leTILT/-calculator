@@ -1,10 +1,15 @@
 from PyQt5.QtWidgets import (QApplication, QWidget, QPushButton, QLineEdit, QGridLayout, QSizePolicy)
 
+from PyQt5.QtGui import QFont
+
+my_font = QFont('Segoe UI', 18)
+
 class StretchButton(QPushButton):
     def __init__(self, text):
         super().__init__(text)
         self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         self.setMinimumSize(40, 40)
+        self.setFont(my_font)
 
 class MainWindow(QWidget):
     def __init__(self):
